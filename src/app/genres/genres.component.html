@@ -1,0 +1,19 @@
+<!-- Directives -->
+<!-- <input type="text" class="" name="" id=""/> -->
+<!-- structural directives -->
+<ul class="list-unstyled p-2">
+    <li *ngFor="let genre of genres" class="m-1">
+        <!-- <a href="#">
+             evaluate expression -->
+            <!-- {{genre.name}} -->
+            <!-- {{5+5}} -->
+            <!-- the page will show 10 -->
+        <!-- </a> -->
+                       <!-- this goes to MovieList component (as specified in routing.module) -->
+        <a [routerLink]="['movies/genre', genre.id]">{{ genre.name }}</a>
+
+        
+    </li>
+</ul>
+
+<!-- for navigation/routing in angular, we use Angular Router instead of using href-->

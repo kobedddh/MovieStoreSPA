@@ -1,0 +1,12 @@
+<div class="rounded">
+    <div class="container-fluid light">
+        <div class="row">
+            <div *ngFor="let movie of movies">
+                            <!--[movie] is MovieCard input property, 'movie' is the actual object  -->
+                            <!-- so we can pass the movie object (value) to MovieCardComponent property -->
+                <app-movie-card [movie]='movie'></app-movie-card>
+            </div>
+        </div>
+    </div>
+</div>
+
