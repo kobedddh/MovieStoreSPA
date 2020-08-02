@@ -1,3 +1,6 @@
+import { ProfileComponent } from './account/profile/profile.component';
+import { PurchasesComponent } from './account/purchases/purchases.component';
+import { FavoritesComponent } from './account/favorites/favorites.component';
 import { MovieListComponent } from './movies/movie-list/movie-list.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -16,7 +19,11 @@ const routes: Routes = [
   //define the route url (this is not API url, but our component URL: if we go to this URL it will display that component)
   //here has nothing to do with backend;
   //at backend we call our services will the URL
-  {path:'movies/genre/:id',component:MovieListComponent}
+  {path:'movies/genre/:id',component:MovieListComponent},
+  //08/02
+  {path:'user/:id/favorites',component:FavoritesComponent},
+  {path:'user/:id/purchases',component:PurchasesComponent},
+  {path:'user/:id/myprofile',component:ProfileComponent}
 
 
 ];

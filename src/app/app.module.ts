@@ -30,6 +30,9 @@ import { MovieDetailsComponent } from './movies/movie-details/movie-details.comp
 import { MovieCardComponent } from './shared/components/movie-card/movie-card.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MovieListComponent } from './movies/movie-list/movie-list.component';
+import { FavoritesComponent } from './account/favorites/favorites.component';
+import { PurchasesComponent } from './account/purchases/purchases.component';
+import { ProfileComponent } from './account/profile/profile.component';
 // import { MoviesComponent } from './movies/movies.component';
 
 //@ is used for the decorator
@@ -47,7 +50,10 @@ import { MovieListComponent } from './movies/movie-list/movie-list.component';
     SignUpComponent,
     MovieDetailsComponent,
     MovieCardComponent,
-    MovieListComponent
+    MovieListComponent,
+    FavoritesComponent,
+    PurchasesComponent,
+    ProfileComponent
     // MoviesComponent
   ],
   //place to put third party libraries

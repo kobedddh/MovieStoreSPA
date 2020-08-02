@@ -39,6 +39,20 @@
           <a class="nav-link" [routerLink]="[ '/signup']">Sign up</a>
         </li>
 
+        <!-- !! modify here once authentication is taught-->
+        <li class="nav-item">
+          <div ngbDropdown>
+            <a class="nav-link" style="cursor: pointer;" ngbDropdownToggle> User </a>
+            <div ngbDropdownMenu>
+              <div><a [routerLink]="['user', userId,'favorites']">favorites</a></div>
+              <div><a [routerLink]="['user',userId,'purchases']">purchases</a></div>  
+              <div><a [routerLink]="['user',userId,'myprofile']">my profile</a></div>                  
+            </div>
+          </div>
+        </li>
+
+
+
         
         <!-- <li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
