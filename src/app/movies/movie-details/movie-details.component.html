@@ -7,13 +7,13 @@
     <div class="float-left p-2 w-50">
         <h1 class="text-white">{{movie.title}}</h1>
         <p class="text-sm-left text-dark mb-1">{{movie.tagline}}</p>
-        <p class="text-md-left mb-1">{{movie.runTime}}|{{movie.releaseDate}}</p>
+        <p class="text-md-left mb-1">{{movie.runTime}}&nbsp;m|{{movie.releaseDate|date}}</p>
 
         <div>
             <span *ngFor="let genre of movie.genres"></span>
         </div>
-        <p class="text-md-left text-black bg-warning d-inline p-2 rounded" style="">{{movie.rating}}</p>
-        <p class="text-md-left text-white">{{movie.overview}}</p>
+        <p class="text-md-left text-black bg-warning d-inline m-2 p-1 pl-3 pr-3 rounded">{{movie.rating|number:'1.1-1'}}</p>
+        <p class="text-md-left text-white">{{movie.overview|overviewPipe}}</p>
     </div>
     <div class="float-left p-2 w-20">
         <div>
@@ -26,6 +26,7 @@
             }
             else
             { -->
+                
                 <form method="post" asp-action="Favorite" asp-controller="User">
                     <button type="submit"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
                     <input type="hidden" value="@Model.Movie.Id" name="MovieId" />
@@ -56,7 +57,7 @@
                     else
                     { -->
                         <form method="post" asp-action="Purchase" asp-controller="User">
-                            <input type="submit" value="BUY $@Model.Movie.Price" class="btn btn-primary btn-block m-1" />
+                            <input type="submit" value="BUY {{movie.price|currency}}" class="btn btn-primary btn-block m-1" />
                             <!-- this name tag should be the same as PurchaseRequestModel.property, so this input can pass value to that property -->
                             <input type="hidden" value="@Model.Movie.Id" name="MovieId" />
                         </form>
@@ -71,10 +72,10 @@
     <div class="float-left w-25 pt-3 pl-3" style="background-color:#dcdcdc;height:15rem">
         <h4 class="sm">MOVIE FACTS</h4>
         <ul class="list-unstyled">
-            <li>Release Date <span class="bg-dark rounded text-white">{{movie.releaseDate}}</span></li>
-            <li>Run time <span class="bg-dark rounded text-white">&nbsp;{{movie.runTime}}&nbsp;</span></li>
-            <li>Box Office <span class="bg-dark rounded text-white">&nbsp;{{movie.revenue}}&nbsp;</span></li>
-            <li>Budget <span class="bg-dark rounded text-white">&nbsp;{{movie.budget}}&nbsp;</span></li>
+            <li>Release Date <span class="bg-dark rounded text-white">&nbsp;{{movie.releaseDate|date}}&nbsp;</span></li>
+            <li>Run time <span class="bg-dark rounded text-white">&nbsp;{{movie.runTime}}&nbsp;m&nbsp;</span></li>
+            <li>Box Office <span class="bg-dark rounded text-white">&nbsp;{{movie.revenue|currency}}&nbsp;</span></li>
+            <li>Budget <span class="bg-dark rounded text-white">&nbsp;{{movie.budget|currency}}&nbsp;</span></li>
         </ul>
         <button style="border-style:none"><i class="fa fa-window-maximize" aria-hidden="true"></i></button>
         <button style="border-style:none"><i class="fa fa-share-square-o" aria-hidden="true"></i></button>

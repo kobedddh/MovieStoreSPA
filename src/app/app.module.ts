@@ -1,9 +1,12 @@
+import { OverviewPipe } from './shared/pipes/overviewPipe';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
+//08/04
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //07/30
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 //import 3rd party libraries
 //07/31
@@ -53,7 +56,10 @@ import { ProfileComponent } from './account/profile/profile.component';
     MovieListComponent,
     FavoritesComponent,
     PurchasesComponent,
-    ProfileComponent
+    ProfileComponent,
+
+    OverviewPipe
+
     // MoviesComponent
   ],
   //place to put third party libraries
@@ -63,6 +69,9 @@ import { ProfileComponent } from './account/profile/profile.component';
     //07/30
     HttpClientModule,
     NgbModule,
+    //08/03
+    FormsModule,
+    ReactiveFormsModule,
     //07/31
     //add NgBootstrapModule
     NgbModule,

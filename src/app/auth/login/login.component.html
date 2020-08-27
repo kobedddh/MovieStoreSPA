@@ -1,22 +1,37 @@
-<h1 class=" ml-5">Login</h1>
-<hr />
-<div class="row  ml-5">
-    <div class="col-md-4">
-        <form asp-action="Login">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Login" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+
+<!-- send un/pw with Login model to AuthService(Angular), this will send to our AccountController
+    POST -->
+    <!-- we are submiting JSON data, instead of the whole form  -->
+
+    <!-- Template approach -->
+    <!-- use Angular directives, add them in form -->
+
+    
+
+    <!-- when we click the submit button inside this form, it will trigger the login() method -->
+                      <!--directive =  method in 【loginComponent】;  template reference --> 
+    <form class="w-25 m-5" (ngSubmit)="login()" #loginForm>
+        <div *ngIf="invalidLogin" class="alert alert-danger">
+          Invalid username and/or password
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            aria-describedby="emailHelp"
+            placeholder="Enter email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Password"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>

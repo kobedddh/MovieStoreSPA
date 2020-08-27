@@ -51,8 +51,9 @@ export class ApiService {
 
   //post information
   //login,signup,create movie
-  create() {
-
+  create(path:string,resource:any):Observable<any> {
+    return this.http.post(`${environment.apiUrl}${path}`,resource)
+    .pipe(map(response=>response));
   }
 
   //update movie/user info
